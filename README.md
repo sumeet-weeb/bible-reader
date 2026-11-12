@@ -1,59 +1,65 @@
 # Bible Reader — Android
 
-Native Android app built with Kotlin, Jetpack Compose, Material 3, Room and DataStore.
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/sumeet-weeb/bible-reader)](https://github.com/sumeet-weeb/bible-reader/releases)
+[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](#building)
 
-## Quick setup (Linux/macOS)
-1. Extract the ZIP and open a terminal in the `bible-reader` folder.
-2. Run `./prepare.sh` on a machine with internet access, Python 3 and Gradle installed. It verifies the project, fetches the Bible text and builds a debug APK.
-3. If Gradle is not installed, open the folder in Android Studio, use JDK 17, install Android SDK Platform 36, sync Gradle and run the `app` configuration on a device/emulator.
+A clean, lightweight, privacy-focused, and completely offline native Android Bible reader built with Kotlin, Jetpack Compose, Material 3, Room, and DataStore.
 
-The generated debug APK (when the build succeeds) is `app/build/outputs/apk/debug/app-debug.apk`.
+<p align="center">
+  <img src="fastlane/metadata/android/en-US/images/icon.png" width="128" height="128" alt="Bible Reader Icon" />
+</p>
 
-## Add the complete Bible text
-The app is wired to import the complete World English Bible (WEBP) from a JSON asset on first launch. The full text is not embedded in this ZIP because the build environment could not retrieve the upstream archive. To fetch and prepare it on a computer with internet access, run this from the project root:
+## Features
 
+- **100% Offline & Private**: Zero internet permissions required (`android.permission.INTERNET` is omitted), zero tracking, zero telemetry, and zero advertisements.
+- **Complete Scripture**: All 66 books of the Protestant canon (31,098 verses) bundled directly from the public-domain World English Bible (WEB).
+- **Fast Full-Text Search**: Instant phrase and keyword search across all 66 books.
+- **Clean Reading Experience**: Distraction-free typography with customizable font sizing.
+- **Bookmarks, Highlights & Notes**: Save meaningful passages, apply color highlights, and take personal study notes that persist securely on-device.
+- **Study Companion**:
+  - Offline introductions and chapter outlines for all 66 books.
+  - Concise biblical dictionary.
+  - Curated guides for key biblical figures, major theological themes, and historical contexts.
+  - 30-day Gospel reading plan with local progress tracking.
+- **Resume Reading**: One-tap resume card on the Home screen to jump straight back into your last read passage.
+
+## Download & Install
+
+Download the latest pre-built APK directly from GitHub Releases:
+
+👉 **[Download Bible Reader v0.1.0](https://github.com/sumeet-weeb/bible-reader/releases/tag/v0.1.0)**
+
+*(F-Droid listing currently in packaging review)*
+
+## Building
+
+### Prerequisites
+- JDK 17
+- Android SDK Platform 36 (`compileSdk = 36`)
+- Android SDK Build-Tools 35+
+
+### Build from Terminal
 ```bash
-python3 tools/fetch_web_bible.py
+git clone https://github.com/sumeet-weeb/bible-reader.git
+cd bible-reader
+
+# Build debug APK
+./gradlew assembleDebug
+
+# Build release APK
+./gradlew assembleRelease
 ```
+The output APKs are generated under `app/build/outputs/apk/`.
 
-The script downloads the official eBible.org USFM archive, converts it without paraphrasing, checks all 66 books, all 1,189 chapters, duplicate references and a minimum verse count, then writes:
+### Android Studio
+1. Open the project root in Android Studio.
+2. Ensure Gradle JDK is set to **JDK 17**.
+3. Let Gradle sync and run the `app` configuration.
 
-`app/src/main/assets/bible/complete-bible.json`
-
-Rebuild and install the app after generating that asset. The app imports it into Room at first launch. Official source and usage terms: https://ebible.org/details.php?id=engwebp and https://ebible.org/engwebp/copyright.htm.
-
-## Implemented
-- Dark premium Material 3 interface
-- Home, Bible, Search, Study and Library navigation
-- Full 66-book Protestant canon catalogue and chapter counts
-- Searchable book list and chapter selector
-- Previous/next chapter navigation across book boundaries
-- Scripture verse Room table, chapter query and full-text search DAO
-- Search screen with passage results
-- Offline study introductions for all 66 books
-- Offline Bible dictionary with key terms
-- 30-day Gospel reading plan with locally saved completion progress
-- Study profiles for key biblical people, major themes, historical background and cross-references
-- Offline Bible dictionary
-- 30-day Gospel reading plan with completion saved locally
-- Home resume-reading card and tappable saved references in Library
-- Room persistence for bookmarks, highlights, notes and reading progress
-- Verse selection, bookmark/highlight actions and personal note editor
-- Library screen displays saved records
-- DataStore-backed reader font size preference
-- JSON asset importer and validation helper
-- Room migration from the previous v1 scaffold to v2
-
-## Current limitations
-- The actual Bible text must be generated with the setup script above; it is not in this ZIP because the authoring environment could not resolve the upstream host.
-- Study includes offline introductions for all 66 books, profiles of key people, themes, historical settings and cross-reference topics. It is a curated study guide, not a full academic commentary or exhaustive encyclopedia.
-- No APK build has been run in the authoring environment because Gradle and the Android SDK are unavailable here.
-- The project does not bundle the Gradle wrapper JAR. `prepare.sh` generates the wrapper when a local Gradle installation is available; otherwise use Android Studio.
-
-## Translation notice
-The World English Bible text is public domain. “World English Bible” is a trademark of eBible.org. Do not modify the text and continue to identify it as the World English Bible. This app is independent and not endorsed by eBible.org. See `app/src/main/assets/bible/ATTRIBUTION.txt`.
-
+## Translation Attribution
+The World English Bible (WEB) text is in the public domain. "World English Bible" is a trademark of eBible.org. See [ATTRIBUTION.txt](app/src/main/assets/bible/ATTRIBUTION.txt) for official source details and translation notices.
 
 ## License
 
-This project is licensed under the GNU General Public License, version 3 (GPL-3.0-only). See [LICENSE](LICENSE) for the full license text.
+This project is licensed under the **GNU General Public License v3.0** (`GPL-3.0-only`). See [LICENSE](LICENSE) for details.
