@@ -1,0 +1,9 @@
+Bible Reader is a lightweight, privacy-focused, and completely offline Bible reader featuring the public-domain World English Bible (WEB).
+
+Features:
+• Complete Scripture: All 66 books of the Old and New Testaments (31,000+ verses) bundled offline.
+• Full-Text Search: Fast, responsive phrase and keyword search across the entire Bible.
+• Clean Reading Interface: Distraction-free typography with customizable text sizes.
+• Bookmarks, Highlights & Notes: Save meaningful verses, color-highlight, and take personal study notes that persist securely on-device.
+• Study Companion: Concise dictionary, 66 book overviews, key themes, cross-references, and a 30-day Gospel reading plan.
+• 100% Offline & Private: No internet permission required, no user tracking, no telemetry, and no advertisements. Free and open source under GPLv3.

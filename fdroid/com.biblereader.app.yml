@@ -1,0 +1,36 @@
+Categories:
+  - Reading
+License: GPL-3.0-only
+AuthorName: sumeet-weeb
+SourceCode: https://github.com/sumeet-weeb/bible-reader
+IssueTracker: https://github.com/sumeet-weeb/bible-reader/issues
+
+AutoName: Bible Reader
+Summary: Clean, offline, distraction-free Bible reader and study companion
+Description: |-
+  Bible Reader is a lightweight, privacy-focused, and completely offline Bible reader
+  featuring the public-domain World English Bible (WEB).
+
+  Features:
+  * Full offline Old and New Testament (31,000+ verses) bundled directly
+  * Fast full-text search across all books
+  * Clean reading interface with customizable font sizes
+  * Bookmarking, highlighting, and personal note taking
+  * Study companion with book overviews, concise dictionary, and reading plans
+  * Zero ads, zero tracking, and no internet permissions required
+
+RepoType: git
+Repo: https://github.com/sumeet-weeb/bible-reader.git
+
+Builds:
+  - versionName: 0.1.0
+    versionCode: 1
+    commit: v0.1.0
+    subdir: app
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: 0.1.0
+CurrentVersionCode: 1
