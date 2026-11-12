@@ -1,0 +1,7 @@
+World English Bible (WEBP)
+Source: https://ebible.org/details.php?id=engwebp
+The World English Bible text is public domain. The name “World English Bible” is a trademark of eBible.org.
+The text must remain unchanged if it is identified as the World English Bible. See the official copyright and usage statement at:
+https://ebible.org/engwebp/copyright.htm
+
+This application is an independent reader and is not affiliated with or endorsed by eBible.org.
